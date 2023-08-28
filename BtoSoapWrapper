@@ -7,31 +7,21 @@ import * as xml2js from 'xml2js';
 class BTOSoapWrapper {
   /**
    * Creates an instance of BTOSoapWrapper.
-   * @param {string} wsdlUrl - The URL of the WSDL file.
-   * @param {soap.ClientOptions} [options={}] - Options for the SOAP client.
    */
   constructor(wsdlUrl, options = {}) {
     /**
      * The URL of the WSDL file.
-     * @type {string}
-     * @private
      */
     this.wsdlUrl = wsdlUrl;
 
     /**
      * Options for the SOAP client.
-     * @type {soap.ClientOptions}
-     * @private
      */
     this.options = options;
   }
 
   /**
    * Creates a SOAP call using the specified method and arguments.
-   * @param {string} methodName - The name of the SOAP method.
-   * @param {any} args - The arguments for the SOAP method.
-   * @returns {Promise<any>} A promise that resolves to the SOAP call result.
-   * @throws {Error} If the SOAP call fails.
    */
   async createSoapCall(methodName, args) {
     try {
@@ -45,10 +35,6 @@ class BTOSoapWrapper {
 
   /**
    * Retrieves SOAP data using the specified method and arguments.
-   * @param {string} methodName - The name of the SOAP method.
-   * @param {any} args - The arguments for the SOAP method.
-   * @returns {Promise<string>} A promise that resolves to the raw SOAP response.
-   * @throws {Error} If SOAP data retrieval fails.
    */
   async retrieveSoapData(methodName, args) {
     try {
@@ -61,9 +47,6 @@ class BTOSoapWrapper {
 
   /**
    * Parses raw SOAP data into JSON format.
-   * @param {string} soapData - The raw SOAP data to be parsed.
-   * @returns {Promise<any>} A promise that resolves to the parsed JSON data.
-   * @throws {Error} If parsing SOAP data fails.
    */
   async parseSoapDataToJson(soapData) {
     try {
@@ -77,10 +60,6 @@ class BTOSoapWrapper {
 
   /**
    * Retrieves and parses SOAP data into JSON format.
-   * @param {string} methodName - The name of the SOAP method.
-   * @param {any} args - The arguments for the SOAP method.
-   * @returns {Promise<any>} A promise that resolves to the parsed JSON data.
-   * @throws {Error} If processing SOAP data fails.
    */
   async getSoapDataAsJson(methodName, args) {
     try {
